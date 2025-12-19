@@ -1,6 +1,6 @@
-# Conviva Session Record
+# Conviva Replay
 
-A standalone session recording module for Conviva analytics that works with both npm and script tags.
+A standalone replay module for Conviva analytics that works with both npm and script tags.
 
 ## Installation
 
