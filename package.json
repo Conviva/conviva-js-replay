@@ -1,14 +1,23 @@
 {
   "name": "@convivainc/conviva-js-replay",
-  "version": "1.0.0",
-  "description": "Standalone cohort recording module for Conviva analytics",
+  "version": "1.5.1",
+  "description": "Conviva Replay library",
   "main": "conviva-replay.umd.min.js",
   "types": "conviva-replay.umd.d.ts",
-  "files": [
-    "conviva-replay.umd.min.js",
-    "conviva-replay.umd.d.ts"
+  "repository": {
+    "type": "git",
+    "url": "git+github.com:Conviva/conviva-js-replay.git"
+  },
+  "keywords": [
+    "Conviva",
+    "Application",
+    "Analytics",
+    "Replay"
   ],
-  "keywords": ["cohort-replay", "replay","analytics", "conviva"],
-  "author": "Conviva Inc.",
-  "license": "BSD-3-Clause"
+  "author": "Conviva Inc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Conviva/conviva-js-replay/issues"
+  },
+  "homepage": "https://github.com/Conviva/conviva-js-replay#readme"
 }
