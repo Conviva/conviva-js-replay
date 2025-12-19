@@ -11,7 +11,7 @@ npm install @convivainc/conviva-js-replay
 
 ### Script Tag
 ```html
-<script src="https://unpkg.com/@convivainc/conviva-replay/dist/conviva-replay.umd.min.js"></script>
+<script src= "<<URL / Path to conviva-replay.umd.min.js>>"></script>
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ npm install @convivainc/conviva-js-replay
 import { init } from '@convivainc/conviva-js-replay';
 
 // Just provide your customer key - that's it!
-init('your-customer-key');
+init('CONVIVA_ACCOUNT_CUSTOMER_KEY');
 ```
 
 ### Script Tag
@@ -33,7 +33,7 @@ init('your-customer-key');
 <script src= "<<URL / Path to conviva-replay.umd.min.js>>"></script>
 <script>
   // Just provide your customer key - that's it!
-  ConvivaReplay.init('your-customer-key');
+  ConvivaReplay.init('CONVIVA_ACCOUNT_CUSTOMER_KEY');
 </script>
 ```
 
@@ -50,5 +50,5 @@ init('your-customer-key');
 **Example:**
 ```typescript
 // Simple usage
-init('your-customer-key');
+init('CONVIVA_ACCOUNT_CUSTOMER_KEY');
 ```
