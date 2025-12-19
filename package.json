@@ -1,0 +1,14 @@
+{
+  "name": "@convivainc/conviva-js-replay",
+  "version": "1.0.0",
+  "description": "Standalone cohort recording module for Conviva analytics",
+  "main": "conviva-replay.umd.min.js",
+  "types": "conviva-replay.umd.d.ts",
+  "files": [
+    "conviva-replay.umd.min.js",
+    "conviva-replay.umd.d.ts"
+  ],
+  "keywords": ["cohort-replay", "replay","analytics", "conviva"],
+  "author": "Conviva Inc.",
+  "license": "BSD-3-Clause"
+}
