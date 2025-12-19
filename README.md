@@ -52,14 +52,3 @@ init('your-customer-key');
 // Simple usage
 init('your-customer-key');
 ```
-
-## Browser Support
-
-- Modern browsers with ES2018 support
-- IndexedDB support
-- Web Workers support
-- AbortController support (with polyfill for older browsers)
-
-## License
-
-BSD-3-Clause
