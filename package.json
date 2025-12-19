@@ -1,6 +1,6 @@
 {
   "name": "@convivainc/conviva-js-replay",
-  "version": "1.5.1",
+  "version": "1.0.0",
   "description": "Conviva Replay library",
   "main": "conviva-replay.umd.min.js",
   "types": "conviva-replay.umd.d.ts",
