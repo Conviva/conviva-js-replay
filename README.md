@@ -30,7 +30,7 @@ init('your-customer-key');
 
 #### Simple Usage (Recommended)
 ```html
-<script src="https://unpkg.com/@convivainc/conviva-replay/dist/conviva-replay.umd.min.js"></script>
+<script src= "<<URL / Path to conviva-replay.umd.min.js>>"></script>
 <script>
   // Just provide your customer key - that's it!
   ConvivaReplay.init('your-customer-key');
