@@ -24,6 +24,7 @@ import { init } from '@convivainc/conviva-js-replay';
 
 // Just provide your customer key - that's it!
 init('CONVIVA_ACCOUNT_CUSTOMER_KEY');
+// INITIALISE CONVIVA-JS-APPP-ANALYTICS(https://github.com/Conviva/conviva-js-appanalytics) AFTER COHORT REPLAY INITIALISATION
 ```
 
 ### Script Tag
@@ -34,6 +35,7 @@ init('CONVIVA_ACCOUNT_CUSTOMER_KEY');
 <script>
   // Just provide your customer key - that's it!
   ConvivaReplay.init('CONVIVA_ACCOUNT_CUSTOMER_KEY');
+  // INITIALISE CONVIVA-JS-SCRIPT-APPP-ANALYTICS(https://github.com/Conviva/conviva-js-script-appanalytics) AFTER COHORT REPLAY INITIALISATION
 </script>
 ```
 
