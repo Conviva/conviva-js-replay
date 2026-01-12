@@ -86,5 +86,5 @@ If a user closes the browser tab after performing an activity, the last up to 1
 This duration represents the maximum possible gap; in most cases, the unavailable replay segment will be less than 1 minute.
 Replay data for that origin will resume only after the application is relaunched and the user returns to the same origin.
 **Notes**
-* 		This limitation applies on a per-origin basis.
-* 		Once the user revisits the same origin, replay capture and availability continue as expected.
+1. This limitation applies on a per-origin basis.
+2. Once the user revisits the same origin, replay capture and availability continue as expected.
