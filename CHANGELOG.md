@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1 (28/JAN/2026)
+* Enhanced data upload logic
+* Partial support for Shadow DOM open mode
+* Bug fixes
+
 ## 1.0.0 (19/DEC/2025) – Initial Release
 
 ### Added
