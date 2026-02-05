@@ -1,0 +1,65 @@
+name: Upload conviva-replay.umd.min.js to GCS and keep CDN current
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  ship:
+    runs-on: ubuntu-latest
+    env:
+      FILE_NAME: ${{ vars.FILE_NAME }}
+      GCP_PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
+      GCP_SERVICE_ACCOUNT: ${{ vars.GCP_SERVICE_ACCOUNT }}
+      GCS_BUCKET: ${{ vars.GCS_BUCKET }}
+      URL_MAP_NAME: ${{ vars.URL_MAP_NAME }}
+      WIF_PROVIDER: ${{ vars.WIF_PROVIDER }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Determine tag
+        id: tag
+        run: echo "TAG=${{ github.event.release.tag_name }}" >> "$GITHUB_OUTPUT"
+
+      - name: Verify source file exists
+        run: |
+          test -f "./${FILE_NAME}" || { echo "File not found: ./${FILE_NAME}"; exit 1; }
+
+      - name: Auth to Google (OIDC, no keys)
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ env.WIF_PROVIDER }}
+          service_account: ${{ env.GCP_SERVICE_ACCOUNT }}
+          project_id: ${{ env.GCP_PROJECT_ID }}
+
+      - name: Install gcloud CLI
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Upload versioned object
+        run: |
+          gcloud storage cp "./${FILE_NAME}" \
+            "gs://${GCS_BUCKET}/replay/releases/${{ steps.tag.outputs.TAG }}/${FILE_NAME}" \
+            --content-type=application/javascript \
+            --cache-control="public, max-age=300, immutable" \
+            --content-disposition="attachment; filename=${FILE_NAME}"
+
+      - name: Upload/overwrite stable 'latest' object
+        run: |
+          gcloud storage cp "./${FILE_NAME}" \
+            "gs://${GCS_BUCKET}/replay/latest/${FILE_NAME}" \
+            --content-type=application/javascript \
+            --cache-control="public, max-age=300" \
+            --content-disposition="attachment; filename=${FILE_NAME}"
+
+      - name: Invalidate Cloud CDN cache
+        if: env.URL_MAP_NAME != ''
+        run: |
+          gcloud compute url-maps invalidate-cdn-cache "${URL_MAP_NAME}" \
+            --path "/replay/latest/${FILE_NAME}" \
+            --async
