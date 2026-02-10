@@ -46,16 +46,14 @@ jobs:
           gcloud storage cp "./${FILE_NAME}" \
             "gs://${GCS_BUCKET}/replay/releases/${{ steps.tag.outputs.TAG }}/${FILE_NAME}" \
             --content-type=application/javascript \
-            --cache-control="public, max-age=300, immutable" \
-            --content-disposition="attachment; filename=${FILE_NAME}"
+            --cache-control="public, max-age=300, immutable"
 
       - name: Upload/overwrite stable 'latest' object
         run: |
           gcloud storage cp "./${FILE_NAME}" \
             "gs://${GCS_BUCKET}/replay/latest/${FILE_NAME}" \
             --content-type=application/javascript \
-            --cache-control="public, max-age=300" \
-            --content-disposition="attachment; filename=${FILE_NAME}"
+            --cache-control="public, max-age=300"
 
       - name: Invalidate Cloud CDN cache
         if: env.URL_MAP_NAME != ''
