@@ -20,6 +20,8 @@ To use them, add a script tag to your HTML before DPI SDK intialization:
 
 Conviva's CDN supports Brotli and gzip compression. When the browser sends the appropriate Accept-Encoding header (which modern browsers do by default), the CDN automatically serves a compressed response, reducing download size and improving load times with no additional configuration required.
 
+**Note**: Conviva CDN serves replay packages starting from version v1.0.1
+
 ## Usage
 
 ### NPM/ES Modules
