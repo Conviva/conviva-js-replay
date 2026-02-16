@@ -10,9 +10,15 @@ npm install @convivainc/conviva-js-replay
 ```
 
 ### Script Tag
-```html
-<script src= "<<URL / Path to conviva-replay.umd.min.js>>"></script>
+Conviva hosts sensor scripts on its CDN, allowing direct integration via <script> tags without needing a package manager. The CDN URLs follow the pattern below, where the version segment (e.g., v1.0.0, v1.0.1) should be replaced with the desired sensor version:
+
+To use them, add a script tag to your HTML before DPI SDK intialization:
+
+```js
+<script src="https://sensor.conviva.com/replay/releases/v1.0.1/conviva-replay.umd.min.js"></script>
 ```
+
+Conviva's CDN supports Brotli and gzip compression. When the browser sends the appropriate Accept-Encoding header (which modern browsers do by default), the CDN automatically serves a compressed response, reducing download size and improving load times with no additional configuration required.
 
 ## Usage
 
