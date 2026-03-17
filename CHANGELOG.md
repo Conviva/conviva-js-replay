@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2 (17/MAR/2026)
+* Resolved an issue in the sampling logic to ensure more accurate and consistent data representation.
+* Introduced diagnostic information tracking for cohort replay
+
 ## 1.0.1 (28/JAN/2026)
 * Enhanced data upload logic
 * Partial support for Shadow DOM open mode
