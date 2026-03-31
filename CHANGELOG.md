@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.3 (01/APR/2026)
+* Fixed issue where cohort replay recording status was not set due to race condition
+* Fixed issue when cohort replay was initialized for the first time after local storage available due to race condition.
+* Enhanced failure handling
+
 ## 1.0.2 (17/MAR/2026)
 * Resolved an issue in the sampling logic to ensure more accurate and consistent data representation.
 * Introduced diagnostic information tracking for cohort replay
