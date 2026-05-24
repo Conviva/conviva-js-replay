@@ -2,6 +2,8 @@
 
 A standalone replay module for Conviva analytics that works with both npm and script tags.
 
+> **Compatibility:** Replay **v1.0.4 or later** is required when using `@convivainc/conviva-js-appanalytics` (or its script-tag variant) **v2.2.0 or later**. Earlier replay versions will not react to DPI's mid-session clientId changes and the replay session will be detached from the DPI session.
+
 ## Installation
 
 ### NPM
